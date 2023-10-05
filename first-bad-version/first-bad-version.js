@@ -18,10 +18,11 @@ var solution = function(isBadVersion) {
     let lowestBad;
     return function(n) {
         lowestBad = n;
-        while (lowestBad !== highestGood + 1) {
+        while (lowestBad != highestGood + 1) {
             let current = Math.floor((highestGood + lowestBad) / 2);
             isBadVersion(current) ? lowestBad = current : highestGood = current;
         }
         return lowestBad;
     };
 };
+
