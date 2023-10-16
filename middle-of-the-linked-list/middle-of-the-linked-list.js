@@ -18,9 +18,9 @@ var middleNode = function(head) {
     }
     console.log(count,'count');
     count = parseInt(count / 2);
-
+    
     while(count){
-        head=head.next;
+        head = head.next;
         count--;
     }
     return head;
