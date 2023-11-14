@@ -2,6 +2,7 @@
  * @param {number} num
  * @return {number}
  */
+
 const maximum69Number  = function(num) {
     const digits = num.toString().split('');
     const res = digits.map(Number)
