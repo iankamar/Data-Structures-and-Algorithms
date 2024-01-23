@@ -1,20 +1,10 @@
 class Solution:
     def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
-        # Sort the points based on x-coordinates
-        points.sort(key = lambda x: x[0])
+   # Extract the x-coordinates and sort them
 
-        # Initialize max_width to 0
-        max_width = 0
+        x_coordinates = sorted(point[0] for point in points)
 
-        # Iterate through the sorted list
-        for i in range (1, len(points)):
+   # Find the maximum difference between adjacent x-coordindates using the zip function
+        max_width = max(x2 - x1 for x1, x2 in zip (x_coordinates,   x_coordinates[1:]))
 
-            # Calcualte the difference between x -coordinates of every two adjacent points
-
-            width = points[i][0] - points[i-1][0]
-
-            # Update max_width if the current width is larger
-            max_width = max(max_width, width)
-
-        # Return the maximum width
         return max_width
